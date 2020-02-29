@@ -22,7 +22,7 @@ Segue o seguinte formarto de requisições e respostas:
 - usuario
     - **cria usuário**
         - ` POST ` ` /usuario `
-        - Payload request
+        - Request payload
         ```json
             {
                 "email": "exemplo@exemplo.com",
@@ -33,25 +33,12 @@ Segue o seguinte formarto de requisições e respostas:
 
     - **palpita em um jogo**
         - ` POST ` ` /usuario/palpite/jogo `
-        - Payload request
+        - Request payload
         ```json
         {
-            "jogo": {
-                "horaComeco": "13:00",
-                "timeCasa": {
-                    "nome": "abc",
-                    "dataFundacao": "01/01/2020"
-                },
-                "timeVisitante": {
-                    "nome": "bca",
-                    "dataFundacao": "01/01/2020"
-                },
-                "placar": {
-                    "golsTimeCasa": 1,
-                    "golsTimeVisitante": 2
-                },
-                "rodada": 1
-            },
+            "nomeTimeCasa": "abc",
+            "nomeTimeVisitante": "bca",
+            "rodada": 1,
             "placar": {
                 "golsTimeCasa": 123,
                 "golsTimeVisitante": 123
@@ -61,14 +48,8 @@ Segue o seguinte formarto de requisições e respostas:
         - ` Status 200 `   
     
     - **pega pontuação feita pelo palpite do usuário**
-        - ` GET ` ` /usuario/palpite/pontuacao `
-        - Payload request
-        ```json
-            {
-                "email": "exemplo@exemplo.com"
-            }
-        ```
-        - Payload response
+        - ` GET ` ` /usuario/palpite/pontuacao?email=exemplo@exemplo.com `
+        - Response payload
         ```json
             {
                 "pontuação": 10
@@ -76,6 +57,91 @@ Segue o seguinte formarto de requisições e respostas:
         ```
         - ` Status 200 `
 
+- time
+    - **cria time**
+        - ` POST ` `/time/`
+        - Request payload
+        ```json
+            {
+                "nome": "abc",
+                "dataFundacao0": "01/02/2020"
+            }
+        ```
+        - ` Status 201 `
+
+- campeonato
+    - **cria campeonato**
+        - ` POST ` ` /campeonato/ `
+        - Request payload
+        ```json
+            {
+                "nome": "abc",
+                "dataInicio": "01/01/2020",
+                "quantidadeTimesParticipantes": 5,
+                "times": ["abc", "bca"] 
+            }
+        ```
+        - *adicionar um time ao campeonato é opcional*
+        - ` Status 201 `
+
+- bolao
+    - **cria bolão**
+        - ` POST ` ` /bolao/ `
+        - Request Payload
+        ```json
+            {
+                "campeonatoNome": "abc",
+                "emails": ["exemplo@exemplo.com", "exemplo1@exemplo.com"]
+            }
+        ```
+        - ` Status 201 `
     
+    - **aceita convite do bolão**
+        - ` PUT ` ` /bolao/participantes `
+        - Request payload 
+        ```json
+            {
+                "participantes": ["exemplo@exemplo.com", "exemplo1@exemplo.com"]
+            }
+        ```
+        - ` Status 200 `
     
+- jogo
+    - **cria jogo em um campeonato**
+        - `POST` `/jogo/`
+        - Request payload
+        ```json
+            {
+                "timeCasa": "abc",
+                "timeVisitante": "bca",
+                "horaComeco": "13:00",
+                "campeonatoNome": "abcd",
+                "rodada": 1
+            }
+        ```
+        - ` Status 201 `
+
+    - **processa pontuação do palpite de uma rodada**
+        - ` GET ` ` /jogo/placar/pontuacao `
+        - Response payload
+        ```json
+            {
+                "jogo": {
+                    "horaComeco": "13:00",
+                    "timeCasa": "abc",
+                    "timeVisitante": "bca",
+                    "placar": {
+                        "golsTimeCasa": 123,
+                        "golsTimeVisitante": 123
+                    },
+                    "rodada": 1
+                },
+                "placar": {
+                    "golsTimeCasa": 123,
+                    "golsTimeVisitante": 123
+                },
+                "pontuacao": 10
+            }
+        ```
+        - ` Status 200 `
     
