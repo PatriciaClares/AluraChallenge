@@ -64,7 +64,7 @@ Segue o seguinte formarto de requisições e respostas:
         ```json
             {
                 "nome": "abc",
-                "dataFundacao0": "01/02/2020"
+                "dataFundacao0": "2020-12-31"
             }
         ```
         - ` Status 201 `
