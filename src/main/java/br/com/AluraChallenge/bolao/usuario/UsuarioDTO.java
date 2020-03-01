@@ -4,11 +4,11 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 public class UsuarioDTO {
-    private @NotNull @NotBlank String email;
-    private @NotNull @NotBlank String senha;
+    private String email;
+    private String senha;
 
     public Usuario convert() {
-        return new Usuario(this.email, this.senha);
+        return new Usuario(email, senha);
     }
 
     public String getEmail() {
