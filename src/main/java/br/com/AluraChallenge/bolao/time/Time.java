@@ -1,5 +1,7 @@
 package br.com.AluraChallenge.bolao.time;
 
+import br.com.AluraChallenge.bolao.campeonato.Campeonato;
+
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.time.LocalDate;
@@ -16,10 +18,18 @@ public class Time {
 
     private @NotNull @Past LocalDate dataFundacao;
 
+    @ManyToOne
+    private Campeonato campeonato;
+
     public Time() {}
 
     public Time(String nome, LocalDate dataFundacao) {
         this.nome = nome;
         this.dataFundacao = dataFundacao;
+    }
+
+    public Time(String nome, LocalDate dataFundacao, Campeonato campeonato) {
+        this(nome, dataFundacao);
+        this.campeonato = campeonato;
     }
 }

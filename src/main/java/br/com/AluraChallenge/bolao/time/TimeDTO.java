@@ -1,16 +1,19 @@
 package br.com.AluraChallenge.bolao.time;
 
+import br.com.AluraChallenge.bolao.campeonato.Campeonato;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
 import java.time.LocalDate;
 
 public class TimeDTO {
     private @NotNull @NotBlank String nome;
-    private @NotNull @NotBlank String dataFundacao;
+    private @NotNull String dataFundacao;
+    private String campeonatoNome;
+    private Campeonato campeonato;
 
     public Time convert() {
-        return new Time(this.nome, LocalDate.parse(this.dataFundacao));
+        return new Time(this.nome, LocalDate.parse(this.dataFundacao), this.campeonato);
     }
 
     public String getNome() {
@@ -19,5 +22,17 @@ public class TimeDTO {
 
     public String getDataFundacao() {
         return dataFundacao;
+    }
+
+    public String getCampeonatoNome() {
+        return campeonatoNome;
+    }
+
+    public void setCampeonatoNome(String campeonatoNome) {
+        this.campeonatoNome = campeonatoNome;
+    }
+
+    public void setCampeonato(Campeonato campeonato) {
+        this.campeonato = campeonato;
     }
 }

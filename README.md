@@ -64,9 +64,11 @@ Segue o seguinte formarto de requisições e respostas:
         ```json
             {
                 "nome": "abc",
-                "dataFundacao0": "01/02/2020"
+                "dataFundacao": "2020-12-31",
+                "campeonatoNome": "abc" 
             }
         ```
+        - *adicionar um campeonato é opcional*
         - ` Status 201 `
 
 - campeonato
@@ -76,12 +78,10 @@ Segue o seguinte formarto de requisições e respostas:
         ```json
             {
                 "nome": "abc",
-                "dataInicio": "01/01/2020",
-                "quantidadeTimesParticipantes": 5,
-                "times": ["abc", "bca"] 
+                "dataInicio": "2020-12-31",
+                "quantidadeTimesParticipantes": 5
             }
         ```
-        - *adicionar um time ao campeonato é opcional*
         - ` Status 201 `
 
 - bolao

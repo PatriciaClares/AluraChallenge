@@ -1,5 +1,6 @@
 package br.com.AluraChallenge.bolao.time;
 
+import br.com.AluraChallenge.bolao.campeonato.CampeonatoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,8 +13,12 @@ public class TimeService {
     @Autowired
     private TimeRepository timeRepository;
 
+    @Autowired
+    private CampeonatoRepository campeonatoRepository;
+
     @Transactional
     public ResponseEntity cria(TimeDTO timeDTO) {
+        timeDTO.setCampeonato(campeonatoRepository.findByNome(timeDTO.getCampeonatoNome()));
         timeRepository.save(timeDTO.convert());
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
