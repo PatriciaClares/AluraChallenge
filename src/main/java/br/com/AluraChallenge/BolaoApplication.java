@@ -1,4 +1,4 @@
-package br.com.AluraChallenge.bolao;
+package br.com.AluraChallenge;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

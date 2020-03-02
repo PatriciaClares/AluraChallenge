@@ -1,4 +1,4 @@
-package br.com.AluraChallenge.bolao.usuario;
+package br.com.AluraChallenge.usuario;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

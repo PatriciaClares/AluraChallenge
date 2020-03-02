@@ -91,7 +91,9 @@ Segue o seguinte formarto de requisições e respostas:
         ```json
             {
                 "campeonatoNome": "abc",
-                "emails": ["exemplo@exemplo.com", "exemplo1@exemplo.com"]
+                "participantes": ["exemplo@exemplo.com", "exemplo1@exemplo.com"],
+                "conviteLink": "www.convite.com/aceitar",
+                "dataExpiracaoConvite": "2020-12-31 12:00"
             }
         ```
         - ` Status 201 `

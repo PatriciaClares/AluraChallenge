@@ -1,11 +1,10 @@
-package br.com.AluraChallenge.bolao.time;
+package br.com.AluraChallenge.time;
 
-import br.com.AluraChallenge.bolao.campeonato.Campeonato;
+import br.com.AluraChallenge.campeonato.Campeonato;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Entity
 public class Time {

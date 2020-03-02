@@ -1,12 +1,8 @@
-package br.com.AluraChallenge.bolao.campeonato;
-
-import br.com.AluraChallenge.bolao.time.Time;
-import br.com.AluraChallenge.bolao.time.TimeDTO;
+package br.com.AluraChallenge.campeonato;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
-import java.util.List;
 
 public class CampeonatoDTO {
     private @NotNull @NotBlank String nome;

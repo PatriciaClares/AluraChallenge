@@ -1,6 +1,4 @@
-package br.com.AluraChallenge.bolao.campeonato;
-
-import br.com.AluraChallenge.bolao.time.Time;
+package br.com.AluraChallenge.campeonato;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;

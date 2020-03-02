@@ -1,4 +1,4 @@
-package br.com.AluraChallenge.bolao.usuario;
+package br.com.AluraChallenge.usuario;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
