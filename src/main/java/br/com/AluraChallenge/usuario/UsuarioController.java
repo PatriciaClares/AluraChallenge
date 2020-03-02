@@ -13,7 +13,7 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
     @PostMapping
-    public ResponseEntity cria(@RequestBody @Valid UsuarioDTO usuarioDTO) {
-        return usuarioService.cria(usuarioDTO);
+    public ResponseEntity cria(@RequestBody @Valid  UsuarioDTO usuarioDTO, @RequestParam(required = false) String bolaoId) {
+        return usuarioService.cria(usuarioDTO, bolaoId);
     }
 }

@@ -23,4 +23,8 @@ public class Usuario {
         this.email = email;
         this.senha = senha;
     }
+
+    public String getEmail() {
+        return this.email;
+    }
 }

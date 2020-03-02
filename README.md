@@ -21,7 +21,8 @@ Segue o seguinte formarto de requisições e respostas:
 
 - usuario
     - **cria usuário**
-        - ` POST ` ` /usuario `
+        - ` POST ` ` /usuario?bolaoId=3`
+        - query string opcional
         - Request payload
         ```json
             {
@@ -90,22 +91,17 @@ Segue o seguinte formarto de requisições e respostas:
         - Request Payload
         ```json
             {
-                "campeonatoNome": "abc",
-                "participantes": ["exemplo@exemplo.com", "exemplo1@exemplo.com"],
-                "conviteLink": "www.convite.com/aceitar",
+                "usuarioEmail": "rleao5344@gmail.com",
+                "campeonatoNome": "abaaaasc",
+                "emailParticipantes": ["rleao53@gmail.com", "rleao5344@gmail.com"],
+                "conviteLink": "https://www.convite.com/bolao/participantes?email=rleao534433@gmail.com&bolaoId=1",
                 "dataExpiracaoConvite": "2020-12-31 12:00"
             }
         ```
         - ` Status 201 `
     
     - **aceita convite do bolão**
-        - ` PUT ` ` /bolao/participantes `
-        - Request payload 
-        ```json
-            {
-                "participantes": ["exemplo@exemplo.com", "exemplo1@exemplo.com"]
-            }
-        ```
+        - ` PUT ` ` /bolao/participantes?email=rleao534433@gmail.com&bolaoId=1 `
         - ` Status 200 `
     
 - jogo

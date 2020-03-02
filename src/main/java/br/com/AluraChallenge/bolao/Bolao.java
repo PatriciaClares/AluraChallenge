@@ -26,7 +26,7 @@ public class Bolao {
     @OneToOne
     private @NotNull Campeonato campeonato;
 
-    @OneToMany
+    @ManyToMany(cascade=CascadeType.PERSIST)
     private @NotNull List<Participante> participantes;
 
     private @NotNull @URL String conviteLink;
@@ -43,5 +43,17 @@ public class Bolao {
         this.participantes = participantes;
         this.conviteLink = conviteLink;
         this.dataExpiracaoConvite = dataExpiracaoConvite;
+    }
+
+    public List<Participante> getParticipantes() {
+        return participantes;
+    }
+
+    public String getConviteLink() {
+        return conviteLink;
+    }
+
+    public LocalDateTime getDataExpiracaoConvite() {
+        return dataExpiracaoConvite;
     }
 }
