@@ -1,14 +1,13 @@
-package br.com.AluraChallenge.bolao;
+package br.com.aluraChallenge.bolao;
 
-import br.com.AluraChallenge.campeonato.CampeonatoRepository;
-import br.com.AluraChallenge.usuario.Usuario;
-import br.com.AluraChallenge.usuario.UsuarioRepository;
+import br.com.aluraChallenge.campeonato.CampeonatoRepository;
+import br.com.aluraChallenge.usuario.Usuario;
+import br.com.aluraChallenge.usuario.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.Id;
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.ArrayList;

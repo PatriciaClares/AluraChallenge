@@ -1,4 +1,4 @@
-package br.com.AluraChallenge.utils;
+package br.com.aluraChallenge.utils;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

@@ -1,4 +1,4 @@
-package br.com.AluraChallenge.usuario;
+package br.com.aluraChallenge.usuario;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;

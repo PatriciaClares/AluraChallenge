@@ -1,4 +1,4 @@
-package br.com.AluraChallenge.bolao;
+package br.com.aluraChallenge.bolao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

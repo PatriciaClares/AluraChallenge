@@ -1,8 +1,7 @@
-package br.com.AluraChallenge.bolao;
+package br.com.aluraChallenge.bolao;
 
-import br.com.AluraChallenge.campeonato.Campeonato;
-import br.com.AluraChallenge.usuario.Usuario;
-import org.hibernate.annotations.Cascade;
+import br.com.aluraChallenge.campeonato.Campeonato;
+import br.com.aluraChallenge.usuario.Usuario;
 import org.hibernate.validator.constraints.URL;
 
 import javax.persistence.*;

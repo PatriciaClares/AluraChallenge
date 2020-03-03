@@ -1,6 +1,6 @@
-package br.com.AluraChallenge.time;
+package br.com.aluraChallenge.time;
 
-import br.com.AluraChallenge.campeonato.CampeonatoRepository;
+import br.com.aluraChallenge.campeonato.CampeonatoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

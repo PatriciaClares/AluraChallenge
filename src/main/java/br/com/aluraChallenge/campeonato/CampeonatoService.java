@@ -1,4 +1,4 @@
-package br.com.AluraChallenge.campeonato;
+package br.com.aluraChallenge.campeonato;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

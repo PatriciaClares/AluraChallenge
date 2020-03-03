@@ -1,16 +1,11 @@
-package br.com.AluraChallenge.bolao;
+package br.com.aluraChallenge.bolao;
 
 import org.hibernate.validator.constraints.URL;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.bind.DefaultValue;
 
 import javax.persistence.*;
-import javax.servlet.http.Part;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 public class Participante {

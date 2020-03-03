@@ -1,9 +1,9 @@
-package br.com.AluraChallenge.usuario;
+package br.com.aluraChallenge.usuario;
 
-import br.com.AluraChallenge.bolao.Bolao;
-import br.com.AluraChallenge.bolao.BolaoRepository;
-import br.com.AluraChallenge.bolao.Participante;
-import br.com.AluraChallenge.bolao.ParticipanteRepository;
+import br.com.aluraChallenge.bolao.Bolao;
+import br.com.aluraChallenge.bolao.BolaoRepository;
+import br.com.aluraChallenge.bolao.Participante;
+import br.com.aluraChallenge.bolao.ParticipanteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

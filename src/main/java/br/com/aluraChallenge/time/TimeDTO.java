@@ -1,6 +1,6 @@
-package br.com.AluraChallenge.time;
+package br.com.aluraChallenge.time;
 
-import br.com.AluraChallenge.campeonato.Campeonato;
+import br.com.aluraChallenge.campeonato.Campeonato;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;

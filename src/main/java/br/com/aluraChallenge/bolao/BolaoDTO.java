@@ -1,8 +1,8 @@
-package br.com.AluraChallenge.bolao;
+package br.com.aluraChallenge.bolao;
 
-import br.com.AluraChallenge.campeonato.Campeonato;
-import br.com.AluraChallenge.usuario.Usuario;
-import br.com.AluraChallenge.utils.DataUtil;
+import br.com.aluraChallenge.campeonato.Campeonato;
+import br.com.aluraChallenge.usuario.Usuario;
+import br.com.aluraChallenge.utils.DataUtil;
 import org.hibernate.validator.constraints.URL;
 
 import javax.validation.constraints.*;

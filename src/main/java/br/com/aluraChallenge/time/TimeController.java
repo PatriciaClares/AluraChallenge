@@ -1,4 +1,4 @@
-package br.com.AluraChallenge.campeonato;
+package br.com.aluraChallenge.time;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping(value = "/api/campeonato")
-public class CampeonatoController {
+@RequestMapping(value = "/api/time")
+public class TimeController {
     @Autowired
-    private CampeonatoService campeonatoService;
+    private TimeService timeService;
 
     @PostMapping
-    public ResponseEntity cria(@RequestBody @Valid CampeonatoDTO campeonatoDTO) {
-        return campeonatoService.cria(campeonatoDTO);
+    public ResponseEntity cria(@RequestBody @Valid TimeDTO timeDTO) {
+        return timeService.cria(timeDTO);
     }
 }

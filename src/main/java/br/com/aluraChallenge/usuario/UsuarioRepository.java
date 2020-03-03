@@ -1,4 +1,4 @@
-package br.com.AluraChallenge.usuario;
+package br.com.aluraChallenge.usuario;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
