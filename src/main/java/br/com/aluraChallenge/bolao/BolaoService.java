@@ -46,7 +46,7 @@ public class BolaoService {
         Bolao bolao = bolaoRepository.findById(Long.parseLong(bolaoId)).orElse(null);
         if(bolao == null || bolao.getDataExpiracaoConvite().isBefore(LocalDateTime.now()))
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        Participante participante = participanteRepository.save(new Participante(usuario.getEmail(), (char) 1, LocalDateTime.now(), bolao.getConviteLink()));
+        Participante participante = participanteRepository.save(new Participante(email, (char) 1, LocalDateTime.now(), bolao.getConviteLink()));
         bolao.getParticipantes().add(participante);
         bolaoRepository.save(bolao);
         return ResponseEntity.status(HttpStatus.OK).build();
