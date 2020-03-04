@@ -31,9 +31,10 @@ Segue o seguinte formarto de requisições e respostas:
             }
         ```
         - ` status 200 `
-
+        
+- palpite
     - **palpita em um jogo**
-        - ` POST ` ` /usuario/palpite/jogo `
+        - ` POST ` ` /palpite/jogo `
         - Request payload
         ```json
             {
@@ -49,19 +50,18 @@ Segue o seguinte formarto de requisições e respostas:
                     "golsTimeVisitante": 123
                 }
             }
-
         ```
         - ` Status 200 `   
-    
-    - **pega pontuação feita pelo palpite do usuário**
-        - ` GET ` ` /usuario/palpite/pontuacao?email=exemplo@exemplo.com `
-        - Response payload
-        ```json
-            {
-                "pontuação": 10
-            }
-        ```
-        - ` Status 200 `
+        
+        - **pega pontuação feita pelo palpite do usuário**
+            - ` GET ` ` /usuario/palpite/pontuacao?email=exemplo@exemplo.com `
+            - Response payload
+            ```json
+                {
+                    "pontuação": 10
+                }
+            ```
+            - ` Status 200 `
 
 - time
     - **cria time**
