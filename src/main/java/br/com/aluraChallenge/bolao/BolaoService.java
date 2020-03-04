@@ -29,6 +29,10 @@ public class BolaoService {
 
     @Transactional
     public ResponseEntity cria(BolaoDTO bolaoDTO) {
+        // Autenticacao
+        Usuario usuario = usuarioRepository.findByEmail(bolaoDTO.getUsuarioEmail());
+        if (usuario == null) return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+
         List<Participante> participantes = new ArrayList<>();
         for (String email : bolaoDTO.getEmailParticipantes())
             participantes.add(new Participante(email, bolaoDTO.getConviteLink()));
