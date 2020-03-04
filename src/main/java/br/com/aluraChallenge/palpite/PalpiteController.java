@@ -2,10 +2,7 @@ package br.com.aluraChallenge.palpite;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -17,5 +14,10 @@ public class PalpiteController {
     @PostMapping(value = "/jogo")
     public ResponseEntity palpita(@RequestBody @Valid PalpiteDTO palpiteDTO) {
         return palpiteService.palpita(palpiteDTO);
+    }
+
+    @GetMapping(value = "/pontuacao")
+    public ResponseEntity pontuacao(@RequestParam String email) {
+        return palpiteService.pontuacao(email);
     }
 }

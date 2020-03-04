@@ -33,4 +33,8 @@ public class Jogo {
         this(timeCasa, timeVisitante, horaComeco, campeonato, rodada);
         this.placar = placar;
     }
+
+    public Placar getPlacar() {
+        return placar;
+    }
 }

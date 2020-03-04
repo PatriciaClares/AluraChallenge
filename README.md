@@ -53,15 +53,15 @@ Segue o seguinte formarto de requisições e respostas:
         ```
         - ` Status 200 `   
         
-        - **pega pontuação feita pelo palpite do usuário**
-            - ` GET ` ` /usuario/palpite/pontuacao?email=exemplo@exemplo.com `
-            - Response payload
-            ```json
-                {
-                    "pontuação": 10
-                }
-            ```
-            - ` Status 200 `
+    - **pega pontuação feita pelo palpite do usuário**
+        - ` GET ` ` /palpite/pontuacao?email=exemplo@exemplo.com `
+        - Response payload
+        ```json
+            {
+                "pontuação": 10
+            }
+        ```
+        - ` Status 200 `
 
 - time
     - **cria time**
@@ -128,28 +128,3 @@ Segue o seguinte formarto de requisições e respostas:
         ```
         - placar deve ser usado apenas quando um jogo acaba e deve ser registrado
         - ` Status 201 `
-
-    - **processa pontuação do palpite de uma rodada**
-        - ` GET ` ` /jogo/placar/pontuacao `
-        - Response payload
-        ```json
-            {
-                "jogo": {
-                    "horaComeco": "13:00",
-                    "timeCasa": "abc",
-                    "timeVisitante": "bca",
-                    "placar": {
-                        "golsTimeCasa": 123,
-                        "golsTimeVisitante": 123
-                    },
-                    "rodada": 1
-                },
-                "placar": {
-                    "golsTimeCasa": 123,
-                    "golsTimeVisitante": 123
-                },
-                "pontuacao": 10
-            }
-        ```
-        - ` Status 200 `
-    

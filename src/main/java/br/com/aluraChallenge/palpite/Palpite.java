@@ -24,4 +24,12 @@ public class Palpite {
         this(jogo, placar);
         this.pontuacao = pontuacao;
     }
+
+    public Jogo getJogo() {
+        return jogo;
+    }
+
+    public void setPontuacao(int pontuacao) {
+        this.pontuacao = pontuacao;
+    }
 }
