@@ -36,15 +36,20 @@ Segue o seguinte formarto de requisições e respostas:
         - ` POST ` ` /usuario/palpite/jogo `
         - Request payload
         ```json
-        {
-            "nomeTimeCasa": "abc",
-            "nomeTimeVisitante": "bca",
-            "rodada": 1,
-            "placar": {
-                "golsTimeCasa": 123,
-                "golsTimeVisitante": 123
+            {
+                "jogoDTO": {
+                    "timeCasa": "abc",
+                    "timeVisitante": "bca",
+                    "horaComeco": "2020-12-31 12:00",
+                    "campeonatoNome": "bcd",
+                    "rodada": 1
+                },
+                "placar": {
+                    "golsTimeCasa": 123,
+                    "golsTimeVisitante": 123
+                }
             }
-        }
+
         ```
         - ` Status 200 `   
     
