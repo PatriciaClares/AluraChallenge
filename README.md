@@ -8,6 +8,11 @@ Os endpoints estão separados de acordo com os dominios da applicação
 
 ### Endpoints
 
+Disclaimers:
+
+- Todas as rotas esperam o prefixo ``` /api/ ``` nas rotas;
+- Muitas rotas pedem que tenha o email de de um usuario válido para simular autenticação (Sim, pretendo adicionar JWT); 
+
 Segue o seguinte formarto de requisições e respostas:
 
 - Dominio
