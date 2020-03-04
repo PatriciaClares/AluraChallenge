@@ -24,7 +24,10 @@ public class PalpiteService {
         Placar placar = placarRepository.save(palpiteDTO.getPlacar());
         palpiteDTO.setPlacar(placar);
         palpiteDTO.setJogo(jogo);
-        palpiteRepository.save(palpiteDTO.convert());
+        Palpite palpite = palpiteRepository.save(palpiteDTO.convert());
+        Usuario usuario = usuarioRepository.findByEmail(palpiteDTO.getEmailUsuario());
+        usuario.setPalpite(palpite);
+        usuarioRepository.save(usuario);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
@@ -37,12 +40,20 @@ public class PalpiteService {
         usuario.getPalpite().setPontuacao(pontuacao);
         palpiteRepository.save(usuario.getPalpite());
         usuarioRepository.save(usuario);
-        return ResponseEntity.status(HttpStatus.OK).build();
+        return ResponseEntity.status(HttpStatus.OK).body(pontuacao);
     }
 
-    // adicionar mais regras à geração de pontuação
     private int geraPontuacao(Palpite palpite, Placar placarJogo) {
         if (palpite.getJogo().getPlacar().equals(placarJogo)) return 10;
+
+        boolean acertouResultado = palpite.getJogo().getPlacar().getTimeVencedor().equals(placarJogo.getTimeVencedor());
+        boolean acertouTimeCasaOuTimeVisitante = palpite.getJogo().getPlacar().getGolsTimeCasa() == placarJogo.getGolsTimeCasa() || palpite.getJogo().getPlacar().getGolsTimeVisitante() == placarJogo.getGolsTimeVisitante();
+        boolean acertouQuantidadeGolsTimeVisitanteOuCasa = placarJogo.getGolsTimeCasa() == palpite.getJogo().getPlacar().getGolsTimeCasa() || placarJogo.getGolsTimeVisitante() == palpite.getJogo().getPlacar().getGolsTimeVisitante();
+
+        if (acertouResultado || acertouTimeCasaOuTimeVisitante) return 7;
+        if (!acertouTimeCasaOuTimeVisitante) return 5;
+        if (acertouQuantidadeGolsTimeVisitanteOuCasa) return 2;
+
         return 0;
     }
 }

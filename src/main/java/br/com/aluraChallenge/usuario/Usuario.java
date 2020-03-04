@@ -24,4 +24,8 @@ public class Usuario {
     public Palpite getPalpite() {
         return palpite;
     }
+
+    public void setPalpite(Palpite palpite) {
+        this.palpite = palpite;
+    }
 }

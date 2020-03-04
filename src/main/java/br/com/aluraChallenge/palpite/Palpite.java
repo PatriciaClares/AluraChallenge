@@ -12,17 +12,14 @@ public class Palpite {
     private @ManyToOne @NotNull Jogo jogo;
     private @OneToOne @NotNull Placar placar;
     private int pontuacao;
+    private String timeVencedor;
 
     public Palpite() {}
 
-    public Palpite(Jogo jogo, Placar placar) {
+    public Palpite(Jogo jogo, Placar placar, String timeVencedor) {
         this.jogo = jogo;
         this.placar = placar;
-    }
-
-    public Palpite(Jogo jogo, Placar placar, int pontuacao) {
-        this(jogo, placar);
-        this.pontuacao = pontuacao;
+        this.timeVencedor = timeVencedor;
     }
 
     public Jogo getJogo() {

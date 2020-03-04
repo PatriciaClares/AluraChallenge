@@ -38,6 +38,7 @@ Segue o seguinte formarto de requisições e respostas:
         - Request payload
         ```json
             {
+                "emailusuario": "example@example.com",
                 "jogoDTO": {
                     "timeCasa": "abc",
                     "timeVisitante": "bca",
@@ -47,7 +48,8 @@ Segue o seguinte formarto de requisições e respostas:
                 },
                 "placar": {
                     "golsTimeCasa": 123,
-                    "golsTimeVisitante": 123
+                    "golsTimeVisitante": 123,
+                    "timeVencedor": "bca"
                 }
             }
         ```

@@ -14,6 +14,7 @@ public class Placar {
 
     private @NotNull int golsTimeCasa;
     private @NotNull int golsTimeVisitante;
+    private String timeVencedor;
 
     public int getGolsTimeCasa() {
         return golsTimeCasa;
@@ -21,5 +22,9 @@ public class Placar {
 
     public int getGolsTimeVisitante() {
         return golsTimeVisitante;
+    }
+
+    public String getTimeVencedor() {
+        return timeVencedor;
     }
 }

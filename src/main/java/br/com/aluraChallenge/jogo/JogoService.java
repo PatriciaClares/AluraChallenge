@@ -24,6 +24,6 @@ public class JogoService {
         if(jogoDTO.getTimeVisitante().equals(jogoDTO.getTimeCasa()))
             return false;
         Jogo jogo = jogoRepository.findByRodadaAndTimeCasaAndTimeVisitante(jogoDTO.getRodada(), jogoDTO.getTimeCasa(), jogoDTO.getTimeVisitante());
-        return jogo != null;
+        return jogo == null;
     }
 }
