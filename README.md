@@ -119,9 +119,14 @@ Segue o seguinte formarto de requisições e respostas:
                 "timeVisitante": "bca",
                 "horaComeco": "13:00",
                 "campeonatoNome": "abcd",
-                "rodada": 1
+                "rodada": 1,
+                "placar":  {
+                    "golsTimeCasa": 123,
+                    "golsTimeVisitante": 123
+                }
             }
         ```
+        - placar deve ser usado apenas quando um jogo acaba e deve ser registrado
         - ` Status 201 `
 
     - **processa pontuação do palpite de uma rodada**

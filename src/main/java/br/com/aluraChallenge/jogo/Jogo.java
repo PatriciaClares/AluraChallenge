@@ -1,14 +1,11 @@
 package br.com.aluraChallenge.jogo;
 
 import br.com.aluraChallenge.campeonato.Campeonato;
-import br.com.aluraChallenge.time.Time;
 
 import javax.persistence.*;
 import javax.validation.constraints.Future;
-import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 @Entity
 public class Jogo {
@@ -19,9 +16,8 @@ public class Jogo {
     private @NotNull String timeCasa;
     private @NotNull String timeVisitante;
     private @NotNull int rodada;
-
-    @ManyToOne
-    private @NotNull Campeonato campeonato;
+    private @ManyToOne @NotNull Campeonato campeonato;
+    private @OneToOne Placar placar;
 
     public Jogo() {}
 
@@ -31,5 +27,10 @@ public class Jogo {
         this.horaComeco = horaComeco;
         this.campeonato = campeonato;
         this.rodada = rodada;
+    }
+
+    public Jogo(String timeCasa, String timeVisitante, LocalDateTime horaComeco, Campeonato campeonato, int rodada, Placar placar) {
+        this(timeCasa, timeVisitante, horaComeco, campeonato, rodada);
+        this.placar = placar;
     }
 }

@@ -2,12 +2,9 @@ package br.com.aluraChallenge.jogo;
 
 import br.com.aluraChallenge.campeonato.Campeonato;
 import br.com.aluraChallenge.utils.DataUtil;
-import org.apache.tomcat.jni.Time;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 public class JogoDTO {
     private @NotNull @NotBlank String timeCasa;
@@ -16,9 +13,12 @@ public class JogoDTO {
     private @NotNull @NotBlank String campeonatoNome;
     private Campeonato campeonato;
     private @NotNull int rodada;
+    private Placar placar;
 
     public Jogo convert() {
-        return new Jogo(timeCasa, timeVisitante, DataUtil.parse(horaComeco), campeonato, rodada);
+        if (this.placar == null)
+            return new Jogo(timeCasa, timeVisitante, DataUtil.parse(horaComeco), campeonato, rodada);
+        return new Jogo(timeCasa, timeVisitante, DataUtil.parse(horaComeco), campeonato, rodada, placar);
     }
 
     public String getTimeCasa() {
@@ -43,5 +43,9 @@ public class JogoDTO {
 
     public void setCampeonato(Campeonato campeonato) {
         this.campeonato = campeonato;
+    }
+
+    public Placar getPlacar() {
+        return placar;
     }
 }
